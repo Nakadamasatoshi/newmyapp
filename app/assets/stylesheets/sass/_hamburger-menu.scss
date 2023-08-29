@@ -7,6 +7,7 @@
   width: 100%;
   z-index: 999;
   display: flex;
+  justify-content: space-between;
 }
 
 #menuToggle {
@@ -127,3 +128,21 @@
 }
 
 // ここから追加
+.header {
+  background-color: #535fc8;
+  display: flex;
+
+}
+
+.logo {
+  height: 100px;
+  width: 200px;
+}
+.logo-img {
+  height: 100;
+  width: 200
+  ;
+}
+.main-menu {
+  display: flex;
+}
