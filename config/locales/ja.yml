@@ -2,11 +2,30 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      #machineを追加
+      mchine: '機械'
+      #ここまで
     attributes:
       user:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認用'
+      #machineを追加
+      machine:
+      title: 'タイトル'
+      length: '全長'
+      width: '全幅'
+      height: '全高'
+      horsepower: '馬力'
+      weight: '重量'
+      fuel: '燃料'
+      cabin: 'キャビン'
+      attachment: 'アタッチメント'
+      using_time: '使用時間'
+      maintenance: 'メンテナンス'
+      transportation: '運搬方法'
+      supplement: '補足'
+      #ここまで
 
   date:
     abbr_day_names:

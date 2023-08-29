@@ -7,4 +7,8 @@ Rails.application.routes.draw do
 
   #top_controller
   get '/', to: 'top#index', as: 'index_top'
+
+  #machine_controller
+  get 'machines/new', to: 'machines#new', as: 'new_machine'
+  post 'machines/new', to: 'machines#create', as: 'create_machine'
 end
