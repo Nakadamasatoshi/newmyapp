@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/', to: 'top#index', as: 'index_top'
 
   #machine_controller
+  get 'machines/index', to: 'machines#index', as: 'index_machine'
   get 'machines/new', to: 'machines#new', as: 'new_machine'
   post 'machines/new', to: 'machines#create', as: 'create_machine'
 end

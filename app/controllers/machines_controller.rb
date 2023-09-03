@@ -1,6 +1,14 @@
 class MachinesController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
-    render 'machine/index'
+    @title = params[:title]
+    if @title.present?
+      @machines = Machine.where('title LIKE ?', "%#{@title}%")
+    else
+      @machines = Machine.all
+    end
+    render :index
   end
 
   #ここから追加
