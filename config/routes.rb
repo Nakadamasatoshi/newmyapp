@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   get 'machines/index', to: 'machines#index', as: 'index_machine'
   get 'machines/new', to: 'machines#new', as: 'new_machine'
   post 'machines/new', to: 'machines#create', as: 'create_machine'
+  get 'machines/edit/:id', to: 'machines#edit', as: 'edit_machine'
+  post 'machines/edit/:id', to: 'machines#edit', as: 'update_machine'
+  delete 'machines/destroy/:id', to: 'machines#destroy', as: 'destroy_machine'
 end

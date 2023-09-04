@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mx auto post-form-container">
+      <h2 class="h2">編集画面</h2>
+      <%= form_with(url: update_machine_path, model: @machine, local: true, method: :post, html: { class: 'post-form' }) do |f| %>
+        <% if @machine.errors.any? %>
+          <ul>
+            <% @machine.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %></ul>
+        <% end %>
+
+        <div class="machine-info">
+          <div class="form-group">
+            <%= f.label "タイトル", class: 'form-label' %>
+            <%= f.text_area :title, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "全長(mm)", class: 'form-label' %>
+            <%= f.number_field :length, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "全幅(mm)", class: 'form-label' %>
+            <%= f.number_field :width, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "全高(mm)", class: 'form-label' %>
+            <%= f.number_field :height, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "馬力(ps)", class: 'form-label' %>
+            <%= f.number_field :horsepower, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "重量(kg)", class: 'form-label' %>
+            <%= f.number_field :weight, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "燃料", class: 'form-label' %>
+            <%= f.text_field :fuel, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "キャビン", class: 'form-label' %>
+            <%= f.text_field :cabin, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "アタッチメント", class: 'form-label' %>
+            <%= f.text_field :attachment, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label "使用時間(時間)", class: 'form-label' %>
+            <%= f.number_field :using_time, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "メンテナンス状況", class: 'form-label' %>
+            <%= f.text_field :maintenance, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "運搬方法", class: 'form-label' %>
+            <%= f.text_field :transportation, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "補足", class: 'form-label' %>
+            <%= f.text_area :supplement, class: 'form-control' %>
+          </div> 
+
+          <div class="form-group image-upload">
+            <%= f.label "画像", class: 'form-label' %>
+            <div class="image-preview" id="imagePreview">
+              <img src="<%= @machine.image.attached? ? url_for(@machine.image) : "" %>" alt="Image Preview" class="image-preview__image <%=@machine.image.attached? ? "-block" : "" %>">
+              <span class="image-preview__default-text <%= @machine.image.attached? ? "-none" : "" %>">No image uploaded</span>
+            </div>
+            <%= f.file_field :image, class: 'form-control-file', id: 'imageUpload' %>
+          </div>
+        </div>
+        
+        <div class="button-group">
+          <%=link_to '削除', destroy_machine_path(@machine), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger" %>
+          <%= f.submit '更新', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -7,18 +7,18 @@
 
 <div class="post-list">
   <%= @machines.each do |machine| %>
-    <div class="post">
+    <a class="post" href="<%= edit_machine_path(machine) %>">
       <div class="header">
         <h2 class="title"><%=machine.title %></h2>
         <p class="timestamp"><%= machine.created_at.strftime("%B %d, %Y") %></p>
       </div>
       <div class="body">
-        <p class="content"><%= machine.supplement %></p>
+        <p class="content"><%= machine.transportation %></p>
       </div>
       <div class="image">
         <%= image_tag(machine.image) if machine.image.attached? %>
       </div>
-    </div>
+    </a>
   <% end %>
 </div>
 

@@ -30,6 +30,29 @@ class MachinesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit
+    @machine = Machine.find(params[:id])
+    render :edit
+  end
+
+  def update
+    @machine = Machine.find(params[:id])
+    if params[:machine][:image]
+      @machine.image.attach(params[:machine][:image])
+    end
+    if @machine.update(machine_params)
+      redirect_to index_machine_path, notice: '更新しました'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @machine = Machine.find(params[:id])
+    @machine.destroy
+    redirect_to index_machine_path, notice: '削除しました'
+  end
 end
 
 private
