@@ -44,7 +44,8 @@ class MachinesController < ApplicationController
     if @machine.update(machine_params)
       redirect_to index_machine_path, notice: '更新しました'
     else
-      render :edit, status: :unprocessable_entity
+      redirect_to index_machine_path, notice: '失敗しました'
+      # render :edit, status: :unprocessable_entity
     end
   end
 

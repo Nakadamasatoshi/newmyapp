@@ -6,11 +6,14 @@
     }
 
     .machine-info {
+      display: flex;
       width: 100%;
       flex-wrap: wrap;
-      .post-form {
+      .form-group {
+        width: 40%;
+        margin-right: auto;
         .form-control {
-          width: 20%;
+          width: 100%;
           border: 1px solid lightgray;
           border-radius: 8px;
           padding: 10px;

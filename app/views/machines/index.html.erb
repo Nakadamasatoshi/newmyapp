@@ -6,7 +6,7 @@
 </div>
 
 <div class="post-list">
-  <%= @machines.each do |machine| %>
+  <% @machines.each do |machine| %>
     <a class="post" href="<%= edit_machine_path(machine) %>">
       <div class="header">
         <h2 class="title"><%=machine.title %></h2>
