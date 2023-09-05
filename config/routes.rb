@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   #top_controller
   get '/', to: 'top#index', as: 'index_top'
 
+  #mypage_controller
+  get 'mypage/index', to: 'mypage#index', as: 'index_mypage'
+
   #machine_controller
   get 'machines/index', to: 'machines#index', as: 'index_machine'
   get 'machines/new', to: 'machines#new', as: 'new_machine'

@@ -63,6 +63,7 @@
     }
   }
 }
+
 // 既存コードの下に追加
 // 投稿一覧
 .search-container {
@@ -98,53 +99,56 @@
   }
 }
 
-.post-list {
-  justify-content: space-between;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.machine-list {
 
-  .post {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 30%;
-    max-width: 100px;
-    color: #000;
-    text-decoration: none;
+  .post-list {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
+    .post {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+      width: 30%;
+      max-width: 200px;
+      color: #000;
+      text-decoration: none;
 
-      .title {
-        margin: 0;
-        font-size: 18px;
-        font-weight: bold;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .title {
+          margin: 0;
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        .timestamp {
+          color: #777;
+          font-size: 12px;
+        }
       }
 
-      .timestamp {
-        color: #777;
-        font-size: 12px;
+      .body {
+        .content {
+          margin: 0;
+        }
       }
-    }
 
-    .body {
-      .content {
-        margin: 0;
-      }
-    }
+      .image {
+        margin-top: 20px;
 
-    .image {
-      margin-top: 20px;
-
-      img {
-        width: 30%;
-        max-width: 100px;
-        height: auto;
+        img {
+          width: 30%;
+          max-width: 100px;
+          height: auto;
+        }
       }
     }
   }
