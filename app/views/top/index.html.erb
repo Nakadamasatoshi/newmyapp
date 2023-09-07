@@ -1,14 +1,8 @@
-<div class="top-container">
   <div class="main-container">
     <div class="search-container">
-      <div class="search-container">
-        <%# <img src="3531896_s.jpg"> %>
-        <%= image_tag '3531896_s' %> 
         <%= form_with url: index_machine_path, class: "form", method: :get, local: true do |form| %>
           <input class="input" type="text" name="title" placeholder="タイトルで検索" value="<%= params[:title] %>">
           <%= form.submit "検索", class: "button" %>
         <% end %>  
     </div>
   </div>
-</div>
-

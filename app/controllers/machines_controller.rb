@@ -37,6 +37,7 @@ class MachinesController < ApplicationController
   end
 
   def update
+    Rails.logger.debug("Activity Params: #{machine_params.inspect}")
     @machine = Machine.find(params[:id])
     if params[:machine][:image]
       @machine.image.attach(params[:machine][:image])
@@ -44,6 +45,7 @@ class MachinesController < ApplicationController
     if @machine.update(machine_params)
       redirect_to index_machine_path, notice: '更新しました'
     else
+      Rails.logger.debug(@machine.errors.inspect)
       redirect_to index_machine_path, notice: '失敗しました'
       # render :edit, status: :unprocessable_entity
     end

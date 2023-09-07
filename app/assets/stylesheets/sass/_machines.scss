@@ -68,7 +68,9 @@
 // 投稿一覧
 .search-container {
   margin-bottom: 20px;
-
+  background-image: url("<%= asset_path('3531896_s.jpg') %>")
+  height: 800px;
+  background-size:cover;
   .form {
     margin: 0 auto;
     text-align: center;
@@ -111,11 +113,13 @@
       border: 1px solid #ddd;
       border-radius: 5px;
       padding: 20px;
-      margin-bottom: 20px;
-      width: 30%;
-      max-width: 200px;
+      margin: 10px auto;
+      min-height: 210px;
+      width: 45%;
+      /* max-width: 200px; */
       color: #000;
       text-decoration: none;
+
 
       .header {
         display: flex;
