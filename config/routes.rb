@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users
+# シェア機検索で追加
+  root to: "posts#index"
+  resources :posts do
+    resources :comments, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
+    resources :users, only: :show
+  end
+# ここまで
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
+
 
   #top_controller
   get '/', to: 'top#index', as: 'index_top'

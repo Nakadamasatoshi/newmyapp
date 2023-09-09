@@ -56,7 +56,14 @@ class MachinesController < ApplicationController
     @machine.destroy
     redirect_to index_machine_path, notice: '削除しました'
   end
+
+  # 検索機能を追加
+  def search
+    @machines = Machine.search(params[:keyword])
+  end
 end
+
+
 
 private
 def machine_params
