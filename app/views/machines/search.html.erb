@@ -1,5 +1,3 @@
-<%= render "shared/header" %>
-
 <%= form_with(url:search_machine_path, local: true, method: :get, class: "search-form") do |form| %>
   <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
@@ -12,7 +10,7 @@
   <ul class = "machine-list" >
     <% @machines.each do |machine| %>
     <li class = "list" >
-      <%= link_to machine_path(machine.id) do %>
+      <%= link_to index_machine_path(machine.id) do %>
       <%= image_tag machine.image, class: "machine-img" %>
       <h3 class = 'machine-title'><%= machine.title %></h3>
       <p class = "root-show">〜クリックして詳細を見る〜</p>
@@ -26,5 +24,3 @@
 <%= link_to new_machine_path, class: 'machine-btn' do %>
   <span class='machine-btn-text'>投稿する</span>
   <% end %>
-
-  <%= render "shared/footer" %>

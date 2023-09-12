@@ -1,11 +1,11 @@
   <div class="main-container">
     <div class="search-container">
-        <%= form_with url: index_machine_path, class: "form", method: :get, local: true do |form| %>
+        <%= form_with(url: index_machine_path, class: "form", method: :get, local: true) do |form| %>
           <input class="input" type="text" name="title" placeholder="タイトルで検索" value="<%= params[:title] %>">
           <%= form.submit "検索", class: "button" %>
         <% end %>  
 
-        <%= form_with((url: search_machine_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form_with(url: search_machine_path, local: true, method: :get, class: "search-form") do |form| %>
           <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
           <%= form.submit "検索", class: "search-btn" %>
         <% end %>
