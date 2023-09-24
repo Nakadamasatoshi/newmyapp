@@ -1,23 +1,23 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: MyString
   nickname: MyString
-  name: MyString
-  kana: MyString
-  birthday: 1
-  phone: 1
-  post: 1
+  familyname: MyString
+  firstname: MyString
+  birthdate: MyString
+  phonenumber: 1
+  postalcode: 1
   address: MyString
   comment: MyString
+  user: one
 
 two:
-  email: MyString
   nickname: MyString
-  name: MyString
-  kana: MyString
-  birthday: 1
-  phone: 1
-  post: 1
+  familyname: MyString
+  firstname: MyString
+  birthdate: MyString
+  phonenumber: 1
+  postalcode: 1
   address: MyString
   comment: MyString
+  user: two

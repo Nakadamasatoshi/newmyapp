@@ -4,4 +4,5 @@ class MypageController < ApplicationController
   def index
     render :index
   end
+  j
 end

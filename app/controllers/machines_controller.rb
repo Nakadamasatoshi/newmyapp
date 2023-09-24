@@ -59,7 +59,11 @@ class MachinesController < ApplicationController
 
   # 検索機能を追加
   def search
-    @machines = Machine.search(params[:keyword])
+    if params[:keyword]
+      @machines = Machine.search(params[:keyword])
+    else
+      @machines = Machine.all
+    end
   end
 end
 

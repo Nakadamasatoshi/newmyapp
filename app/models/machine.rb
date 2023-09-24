@@ -13,4 +13,9 @@ class Machine < ApplicationRecord
          Machine.includes(:user).order('created_at DESC')
       end
    end
+
+   #machineからuserを参照できるようにするために追加、userが削除されたらmachineも削除される。
+   has_many :user, dependent: :destroy
+   #ここまで
+
 end

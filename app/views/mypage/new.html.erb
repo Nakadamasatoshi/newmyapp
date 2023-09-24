@@ -1,0 +1,46 @@
+<div class="container machine-container">
+  <div class="row">
+    <div class="col-md-8 mx-auto post-form-container">
+      <h2 class="h2">新規登録</h2>
+      <%= form_with(url: create_mypage_path, model: @plofile, local: true, method: :post, html: { class: 'post-form' }) do |f| %>
+
+        
+        <div class="form-group">
+          <%= f.label "ニックネーム", class: 'form-label' %>
+          <%= f.text_field :nickname, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label "苗字", class: 'form-label' %>
+          <%= f.text_field :familyname, class: 'form-control' %>
+        </div>
+         <div class="form-group">
+          <%= f.label "氏名", class: 'form-label' %>
+          <%= f.text_field :lastname, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label "生年月日", class: 'form-label' %>
+          <%= f.text_field :birthdate, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label "電話番号（ハイフンは除いてください）", class: 'form-label' %>
+          <%= f.number_field :phonenumber, class: 'form-control' %>
+        </div>
+         <div class="form-group">
+          <%= f.label "郵便番号（ハイフンは除いてください）", class: 'form-label' %>
+          <%= f.number_field :postalcode, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label "住所", class: 'form-label' %>
+          <%= f.text_field :address, class: 'form-control' %>
+        </div>
+          <div class="form-group">
+          <%= f.label "コメント", class: 'form-label' %>
+          <%= f.text_field :comment, class: 'form-control' %>
+        </div>
+        <div class="button-group">
+          <%= f.submit '登録', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

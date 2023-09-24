@@ -5,6 +5,9 @@ ja:
       #machineを追加
       mchine: '機械'
       #ここまで
+      #profileを追加
+      profile: 'プロフィール'
+      #ここまで
     attributes:
       user:
         email: 'メールアドレス'
@@ -12,19 +15,30 @@ ja:
         password_confirmation: 'パスワード確認用'
       #machineを追加
       machine:
-      title: 'タイトル'
-      length: '全長'
-      width: '全幅'
-      height: '全高'
-      horsepower: '馬力'
-      weight: '重量'
-      fuel: '燃料'
-      cabin: 'キャビン'
-      attachment: 'アタッチメント'
-      using_time: '使用時間'
-      maintenance: 'メンテナンス'
-      transportation: '運搬方法'
-      supplement: '補足'
+        title: 'タイトル'
+        length: '全長'
+        width: '全幅'
+        height: '全高'
+        horsepower: '馬力'
+        weight: '重量'
+        fuel: '燃料'
+        cabin: 'キャビン'
+        attachment: 'アタッチメント'
+        using_time: '使用時間'
+        maintenance: 'メンテナンス'
+        transportation: '運搬方法'
+        supplement: '補足'
+      #ここまで
+      #profileを追加
+      profile:
+        nickname: 'ニックネーム'
+        familyname: '苗字'
+        firstname: '名前'
+        birthdate: '誕生日'
+        phonenumber: '電話番号'
+        postalcode: '郵便番号'
+        address: '住所'
+        comment: 'コメント'
       #ここまで
 
   date:

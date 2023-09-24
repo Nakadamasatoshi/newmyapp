@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   #mypage_controller
   get 'mypage/index', to: 'mypage#index', as: 'index_mypage'
+  get 'mypage/new', to: 'mypage#new', as: 'new_mypage'
+  post 'mypage/new', to: 'mypage#create', as: 'create_mypage'
+  get 'mypage/edit/:id', to: 'mypage#edit', as: 'edit_mypage'
+  post 'mypage/edit/:id', to: 'mypage#update', as: 'update_mypage'
 
   #machine_controller
   get 'machines/index', to: 'machines#index', as: 'index_machine'
