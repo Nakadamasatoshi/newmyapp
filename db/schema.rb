@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_23_122312) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_25_195836) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_bin", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -59,6 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_23_122312) do
     t.integer "price"
     t.string "model"
     t.bigint "user_id", null: false
+    t.string "prefecture"
+    t.string "city"
     t.index ["user_id"], name: "index_machines_on_user_id"
   end
 
@@ -69,7 +71,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_23_122312) do
     t.string "birthdate"
     t.integer "phonenumber"
     t.integer "postalcode"
-    t.string "address"
     t.string "comment"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

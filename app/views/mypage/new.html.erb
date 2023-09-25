@@ -30,8 +30,20 @@
           <%= f.number_field :postalcode, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label "住所", class: 'form-label' %>
-          <%= f.text_field :address, class: 'form-control' %>
+          <%= f.label "都道府県", class: 'form-label' %>
+          <%= f.text_field :prefecture, class: 'form-control' %>
+        </div>
+         <div class="form-group">
+          <%= f.label "市町村", class: 'form-label' %>
+          <%= f.text_field :city, class: 'form-control' %>
+        </div>
+         <div class="form-group">
+          <%= f.label "番地", class: 'form-label' %>
+          <%= f.text_field :town, class: 'form-control' %>
+        </div>
+         <div class="form-group">
+          <%= f.label "アパート名", class: 'form-label' %>
+          <%= f.text_field :buildingname, class: 'form-control' %>
         </div>
           <div class="form-group">
           <%= f.label "コメント", class: 'form-label' %>

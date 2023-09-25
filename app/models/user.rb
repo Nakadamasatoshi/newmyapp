@@ -10,6 +10,7 @@ class User < ApplicationRecord
   #ここまで
 
   #userからmachineを参照できるようにするために追加
-  belongs_to :machine
+  #userは多数のmachineを持てるのでhas_many
+  has_many :machine
   #ここまで
 end
