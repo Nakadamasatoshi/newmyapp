@@ -26,13 +26,13 @@
 
         <div class="machine-info">
           <div class="form-group">
-            <%= f.label "メーカー", class: 'form-label' %>
-            <%= f.text_field :maker, class: 'form-control' %>
+            <%= f.label "機種", class: 'form-label' %>
+            <%= f.text_field :model, class: 'form-control' %>
           </div>
 
           <div class="form-group">
-            <%= f.label "機種", class: 'form-label' %>
-            <%= f.text_field :model, class: 'form-control' %>
+            <%= f.label "メーカー", class: 'form-label' %>
+            <%= f.text_field :maker, class: 'form-control' %>
           </div>
 
           <div class="form-group">
@@ -96,12 +96,12 @@
 
            <div class="form-group">
             <%= f.label "農機具所在地（都道府県）", class: 'form-label' %>
-            <%= f.text_field :prefecture, class: 'form-control' %>
+            <%= f.text_field :prefecture,  value: @profile.prefecture, class: 'form-control' %>
           </div>
 
           <div class="form-group">
             <%= f.label "農機具所在地（市）", class: 'form-label' %>
-            <%= f.text_field :city, class: 'form-control' %>
+            <%= f.text_field :city, value: @profile.city, class: 'form-control' %>
           </div>
 
         </div>        

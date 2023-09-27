@@ -2,52 +2,52 @@
   <div class="row">
     <div class="col-md-8 mx-auto post-form-container">
       <h2 class="h2">新規登録</h2>
-      <%= form_with(url: create_mypage_path, model: @profile, local: true, method: :post, html: { class: 'post-form' }) do |f| %>
+      <%= form_with(url: update_mypage_path, model: @profile, local: true, method: :post, html: { class: 'post-form' }) do |f| %>
 
         
         <div class="form-group">
           <%= f.label "ニックネーム", class: 'form-label' %>
-          <%= f.text_field :nickname, class: 'form-control' %>
+          <%= f.text_field :nickname, value: @profile.nickname, class: 'form-control' %>
         </div>
         <div class="form-group">
           <%= f.label "苗字", class: 'form-label' %>
-          <%= f.text_field :familyname, class: 'form-control' %>
+          <%= f.text_field :familyname, value: @profile.familyname, class: 'form-control' %>
         </div>
          <div class="form-group">
           <%= f.label "氏名", class: 'form-label' %>
-          <%= f.text_field :firstname, class: 'form-control' %>
+          <%= f.text_field :firstname, @profile.firstname, class: 'form-control' %>
         </div>
         <div class="form-group">
           <%= f.label "生年月日", class: 'form-label' %>
-          <%= f.date_field :birthdate, class: 'form-control' %>
+          <%= f.date_field :birthdate,@profile.birthdate, class: 'form-control' %>
         </div>
         <div class="form-group">
           <%= f.label "電話番号（ハイフンは除いてください）", class: 'form-label' %>
-          <%= f.number_field :phonenumber, class: 'form-control' %>
+          <%= f.number_field :phonenumber, @profile.phonenumber, class: 'form-control' %>
         </div>
          <div class="form-group">
           <%= f.label "郵便番号（ハイフンは除いてください）", class: 'form-label' %>
-          <%= f.number_field :postalcode, class: 'form-control' %>
+          <%= f.number_field :postalcode, @profile.postalcode, class: 'form-control' %>
         </div>
         <div class="form-group">
           <%= f.label "都道府県", class: 'form-label' %>
-          <%= f.text_field :prefecture, class: 'form-control' %>
+          <%= f.text_field :prefecture, @profile.prefecture, class: 'form-control' %>
         </div>
          <div class="form-group">
           <%= f.label "市町村", class: 'form-label' %>
-          <%= f.text_field :city, class: 'form-control' %>
+          <%= f.text_field :city, @profile.city, class: 'form-control' %>
         </div>
          <div class="form-group">
           <%= f.label "番地", class: 'form-label' %>
-          <%= f.text_field :town, class: 'form-control' %>
+          <%= f.text_field :town, @profile.town, class: 'form-control' %>
         </div>
          <div class="form-group">
           <%= f.label "アパート名", class: 'form-label' %>
-          <%= f.text_field :buildingname, class: 'form-control' %>
+          <%= f.text_field :buildingname, @profile.buildingname, class: 'form-control' %>
         </div>
           <div class="form-group">
           <%= f.label "コメント", class: 'form-label' %>
-          <%= f.text_field :comment, class: 'form-control' %>
+          <%= f.text_field :comment, @profile.comment, class: 'form-control' %>
         </div>
         <div class="button-group">
           <%= f.submit '登録', class: 'btn btn-primary' %>

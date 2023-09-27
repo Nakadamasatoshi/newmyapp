@@ -6,7 +6,6 @@ class Profile < ApplicationRecord
   validates :birthdate, presence: true, length: {maximum: 100 }
   validates :phonenumber, presence: true, length: {maximum: 100 }
   validates :postalcode, presence: true, length: {maximum: 100 }
-  validates :address, presence: true, length: {maximum: 100 }
   validates :comment, presence: true, length: {maximum: 100 }
   validates :prefecture, presence: true, length: {maximum: 100 }
   validates :city, presence: true, length: {maximum: 100 }
@@ -16,6 +15,6 @@ class Profile < ApplicationRecord
   
 
   #profileからuserを参照できるようにするために追加。userが削除されたらprofileも削除される。
-  has_many :user, dependent: :destroy
+  belongs_to :user, dependent: :destroy
   #ここまで
 end

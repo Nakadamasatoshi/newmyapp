@@ -15,11 +15,14 @@ class MachinesController < ApplicationController
 
   def new
     @machine = Machine.new
+    @profile = Profile.find_by(user_id: current_user.id)
     render :new
   end
 
   def create
+    user = current_user
     @machine = Machine.new(machine_params)
+    @machine.user_id = user.id
 
     if params[:machine][:image]
       @machine.image.attach(params[:machine][:image])
