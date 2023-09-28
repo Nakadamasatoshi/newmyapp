@@ -24,6 +24,27 @@ class MypageController < ApplicationController
     end
   end
 
+  # 編集機能を追加
+  def edit
+    @profile = Profile.find(params[:id])
+    render :edit
+  end
+
+  def update
+    Rails.logger.debug("Activity Params: #{profile_params.inspect}")
+    @profile = Profile.find(params[:id])
+    if params[:profile][:image]
+      @profile.image.attach(params[:profile][:image])
+    end
+    if @profile.update(profile_params)
+      redirect_to index_mypage_path, notice: '更新しました'
+    else
+      Rails.logger.debug(@profile.errors.inspect)
+      redirect_to index_profile_path, notice: '失敗しました'
+      # render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
   def profile_params
     params.require(:profile).permit(:nickname, :familyname, :firstname, :birthdate, :phonenumber, :postalcode, :comment, :prefecture, :city, :town, :buildingname)

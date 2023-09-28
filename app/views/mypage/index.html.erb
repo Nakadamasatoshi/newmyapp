@@ -3,10 +3,16 @@
     <h1 class="main-title">マイページ</h1>
       <section class="section" >
         <h2 class="section-header" >登録内容</h2>
-        
+        <table class="table">
+          <tr>
+            <th>ニックネーム</th>
+            <td>nickname</td>
+          </tr>
+        </table>
         <button class="button-001">登録内容の変更</button>
         <button class="button-001">パスワードの変更</button>
-        <%= link_to "登録内容の変更", new_mypage_path, class: "button-001" %>
+        <%= link_to "プロフィールの登録", new_mypage_path, class: "button-001" %>
+        <%= link_to "登録内容の変更", edit_mypage_path(current_user), class: "button-001" %>
       </section>
   </div>
 </div>
