@@ -3,14 +3,14 @@ class Profile < ApplicationRecord
   validates :nickname, presence: true, length: {maximum: 100 }
   validates :familyname, presence: true, length: {maximum: 100 }
   validates :firstname, presence: true, length: {maximum: 100 }
-  validates :birthdate, presence: true, length: {maximum: 100 }
-  validates :phonenumber, presence: true, length: {maximum: 100 }
+  validates :birthdate, presence: true
+  validates :phonenumber, presence: true
   validates :postalcode, presence: true, length: {maximum: 100 }
   validates :comment, presence: true, length: {maximum: 100 }
   validates :prefecture, presence: true, length: {maximum: 100 }
   validates :city, presence: true, length: {maximum: 100 }
   validates :town, presence: true, length: {maximum: 100 }
-  validates :buildingname, presence: true, length: {maximum: 100 }
+  validates :buildingname, length: {maximum: 100 }
   #ここまで
   
 

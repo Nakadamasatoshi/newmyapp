@@ -1,26 +1,28 @@
 <div class="search-container">
   <%= form_with url: index_machine_path, class: "form", method: :get, local: true do |form| %>
+    <input class="input" type="text" name="title" placeholder="機種で検索" value="<%= params[:model] %>">
     <input class="input" type="text" name="title" placeholder="都道府県で検索" value="<%= params[:prefecture] %>">
     <input class="input" type="text" name="title" placeholder="市町村で検索" value="<%= params[:city] %>">
     <%= form.submit "検索", class: "button" %>
   <% end %>
-</div>
-
-<div class="machine-list">
-  <div class="post-list">
-    <% @machines.each do |machine| %>
-      <a class="post" href="<%= edit_machine_path(machine) %>">
-        <div class="header">
-          <h2 class="title"><%=machine.title %></h2>
-          <p class="timestamp"><%= machine.created_at.strftime("%B %d, %Y") %></p>
-        </div>
-        <div class="body">
-          <p class="content"><%= machine.transportation %></p>
-        </div>
-        <div class="image">
-          <%= image_tag(machine.image) if machine.image.attached? %>
-        </div>
-      </a>
-    <% end %>
+  <div class="machine-list">
+    <div class="post-list">
+      <% @machines.each do |machine| %>
+        <a class="post" href="<%= edit_machine_path(machine) %>">
+          <div class="header">
+            <h2 class="title"><%=machine.title %></h2>
+            <p class="timestamp"><%= machine.created_at.strftime("%B %d, %Y") %></p>
+          </div>
+          <div class="body">
+            <p class="content"><%= machine.transportation %></p>
+          </div>
+          <div class="image">
+            <%= image_tag(machine.image) if machine.image.attached? %>
+          </div>
+        </a>
+      <% end %>
+    </div>
   </div>
 </div>
+
+

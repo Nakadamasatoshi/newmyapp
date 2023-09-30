@@ -13,10 +13,13 @@ class MypageController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
-
-    if params[:profile][:image]
-      @profile.image.attach(params[:profile][:image])
-    end
+    @profile.user_id = current_user.id
+  
+    # if params[:profile][:image]
+    #   @profile.image.attach(params[:profile][:image])
+    # end
+    
+  
     if @profile.save
       redirect_to index_mypage_path, notice: '登録しました'
     else
@@ -40,7 +43,7 @@ class MypageController < ApplicationController
       redirect_to index_mypage_path, notice: '更新しました'
     else
       Rails.logger.debug(@profile.errors.inspect)
-      redirect_to index_profile_path, notice: '失敗しました'
+      redirect_to index_mypage_path, notice: '失敗しました'
       # render :edit, status: :unprocessable_entity
     end
   end

@@ -11,8 +11,11 @@
         </table>
         <button class="button-001">登録内容の変更</button>
         <button class="button-001">パスワードの変更</button>
-        <%= link_to "プロフィールの登録", new_mypage_path, class: "button-001" %>
-        <%= link_to "登録内容の変更", edit_mypage_path(current_user), class: "button-001" %>
+        <% if current_user.profile.present? %>
+          <%= link_to "登録内容の変更", edit_mypage_path(current_user), class: "button-001" %>
+        <% else %>
+         <%= link_to "プロフィールの登録", new_mypage_path, class: "button-001" %>
+        <% end %>
       </section>
   </div>
 </div>

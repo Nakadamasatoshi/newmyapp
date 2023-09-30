@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
  
-  #userからprofileを参照できるようにするために追加
-  belongs_to :profile
+  #userからprofileを参照できるようにするために追加。一つしか持てないのでhas_one
+  has_one :profile
   #ここまで
 
   #userからmachineを参照できるようにするために追加
