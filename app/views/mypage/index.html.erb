@@ -1,21 +1,73 @@
 <div class=" mypage-container" style="position: static; top: 0px;">
   <div class="inner-container">
     <h1 class="main-title">マイページ</h1>
-      <section class="section" >
-        <h2 class="section-header" >登録内容</h2>
-        <table class="table">
-          <tr>
-            <th>ニックネーム</th>
-            <td>nickname</td>
-          </tr>
-        </table>
-        <button class="button-001">登録内容の変更</button>
-        <button class="button-001">パスワードの変更</button>
-        <% if current_user.profile.present? %>
-          <%= link_to "登録内容の変更", edit_mypage_path(current_user), class: "button-001" %>
-        <% else %>
-         <%= link_to "プロフィールの登録", new_mypage_path, class: "button-001" %>
-        <% end %>
-      </section>
+       <h2 class="section-header" >登録内容</h2>
+        <section class="section" >
+          <table class="table">
+            <% @profile.each do |profile| %>
+              <tr>
+                <th>ニックネーム</th>
+                <td><%= profile.nickname %></td>
+              </tr>
+              <tr>
+                <th>苗字</th>
+                <td><%= profile.familyname %></td>
+              </tr>
+              <tr>
+                <th>名前</th>
+                <td><%= profile.firstname %></td>
+              </tr>
+              <tr>
+                <th>生年月日</th>
+                <td><%= profile.birthdate %></td>
+              <tr>
+                <th>電話番号</th>
+                <td><%= profile.phonenumber %></td>
+              </tr>
+              <tr>
+                <th>郵便番号</th>
+                <td><%= profile.postalcode %></td>
+              </tr>
+              <tr>
+                <th>都道府県</th>
+                <td><%= profile.prefecture %></td>
+              </tr>
+              <tr>
+                <th>市町村</th>
+                <td><%= profile.city %></td>
+              </tr>
+              <tr>
+               <th>番地</th>
+                <td><%= profile.town %></td>
+              </tr>
+                <th>建物名</th>
+                <td><%= profile.buildingname %></td>
+              </tr>
+              <tr>
+                <th>コメント</th>
+                <td><%= profile.comment %></td>
+              </tr>
+            <% end %>
+          </table>
+
+            <div class="mypage-button">
+              <% if current_user.profile.present? %>
+                <%= link_to "登録内容の変更", edit_mypage_path(current_user), class: "button-001" %>
+              <% else %>
+               <%= link_to "プロフィールの登録", new_mypage_path, class: "button-001" %>
+              <% end %>
+            </div>
+        </section>
+      <h2 class="section-header" >本人確認</h2>
+        <section>
+          <h3>必要書類</h3>
+            <div class="mypage-button">
+              <% if current_user.profile.present? %>
+                <%= link_to "登録内容の変更", edit_mypage_path(current_user), class: "button-001" %>
+              <% else %>
+               <%= link_to "プロフィールの登録", new_mypage_path, class: "button-001" %>
+              <% end %>
+
+
   </div>
 </div>

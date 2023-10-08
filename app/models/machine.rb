@@ -14,9 +14,11 @@ class Machine < ApplicationRecord
       end
    end
 
-   #machineからuserを参照できるようにするために追加、userが削除されたらmachineも削除される。
+   #machineからuserを参照できるようにするために追加、
+   # machineが削除された時にuserを削除してはいけないのでdependent: :destroyは不要。profileも同じ
    # machineが複数のユーザーを持ってはいけないのでbelong_toにする
-   belongs_to :user, dependent: :destroy
+   belongs_to :user
    #ここまで
 
+   has_one :profile
 end

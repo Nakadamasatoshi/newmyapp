@@ -74,5 +74,7 @@ end
 
 private
 def machine_params
-  params.require(:machine).permit(:title, :length, :width, :height, :horsepower, :weight, :fuel, :cabin, :attachment, :using_time, :maintenance, :transportation, :supplement)
+  params.require(:machine).permit(:title, :supplement, :model, :maker, :price, :length, :width,
+     :height, :horsepower, :weight, :fuel, :cabin, :attachment, 
+    :using_time, :maintenance, :transportation, :supplement, :prefecture, :city)
 end
