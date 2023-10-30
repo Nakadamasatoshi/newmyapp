@@ -1,0 +1,14 @@
+<%= form_with(url: update_identification_path, model: @user, local: true, method: :post, html: { class: 'post-form' } ) do |form| %>
+
+  <div>
+    <%= form.label :license_image %>
+    <%= form.file_field :license_image %>
+  </div>
+
+  <div>
+    <%= form.label :personal_image %>
+    <%= form.file_field :personal_image %>
+  </div>
+
+  <%= form.submit %>
+<% end %>

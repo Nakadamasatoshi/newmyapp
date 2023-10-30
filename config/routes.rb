@@ -25,4 +25,13 @@ Rails.application.routes.draw do
   post 'machines/edit/:id', to: 'machines#update', as: 'update_machine'
   delete 'machines/destroy/:id', to: 'machines#destroy', as: 'destroy_machine'
   get 'machines/search', to: 'machines#search', as: 'search_machine'
+
+  #Identification_controller
+  get 'identification/new', to: 'identification#new', as: 'new_identification'
+  post 'identification/new', to: 'identification#create', as: 'create_identification'
+  get 'identification/edit/:id', to: 'identification#edit', as: 'edit_identification'
+  post 'identification/edit/:id', to: 'identification#update', as: 'update_identification'
+
+  
+  # resources identifications:, only: [:new, :create, :edit, :update]
 end

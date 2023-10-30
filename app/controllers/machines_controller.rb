@@ -50,7 +50,7 @@ class MachinesController < ApplicationController
     else
       Rails.logger.debug(@machine.errors.inspect)
       redirect_to index_machine_path, notice: '失敗しました'
-      # render :edit, status: :unprocessable_entity
+      # render :edit, status: :unprocessable_entity///
     end
   end
 
