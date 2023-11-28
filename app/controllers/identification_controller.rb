@@ -33,21 +33,21 @@ class IdentificationController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @profile = Profile.find(params[:id])
   end
 
   def update
-    Rails.logger.debug("Activity Params: #{machine_params.inspect}")
-    @machine = Machine.find(params[:id])
-    if params[:machine][:image]
-      @machine.image.attach(params[:machine][:image])
+    Rails.logger.debug("Activity Params: #{profile_params.inspect}")
+    @profile = Profile.find(params[:id])
+    if params[:profile][:image]
+      @Profile.image.attach(params[:profile][:image])
     end
-    if @machine.update(machine_params)
-      redirect_to index_machine_path, notice: '更新しました'
+    if @profile.update(profile_params)
+      redirect_to index_mypage_path, notice: '更新しました'
     else
-      Rails.logger.debug(@machine.errors.inspect)
-      redirect_to index_machine_path, notice: '失敗しました'
-      # render :edit, status: :unprocessable_entity
+      Rails.logger.debug(@profile.errors.inspect)
+      redirect_to index_mypage_path, notice: '失敗しました'
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -62,7 +62,7 @@ class IdentificationController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:license_image, :personal_image)
+  def profile_params
+    params.require(:profile).permit(:license_image, :personal_image)
   end
 end

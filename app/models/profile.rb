@@ -17,4 +17,9 @@ class Profile < ApplicationRecord
   #profileからuserを参照できるようにするために追加。userが削除されたらprofileも削除される。
   belongs_to :user, dependent: :destroy
   #ここまで
+
+  #個人情報登録用の画像をuserに保存する。本人画像と運転免許証の画像は分けておく。（元々はuserにつけていたが、profileに持ってきた）
+  has_one_attached :personal_image, dependent: :destroy
+  has_one_attached :license_image, dependent: :destroy
+  #ここまで
 end

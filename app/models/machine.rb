@@ -2,6 +2,8 @@ class Machine < ApplicationRecord
    # Validation
    validates :title, presence: true
    validates :transportation, presence: true
+   validates :prefecture, presence: true
+
 
    # ActiveStorage
    #最初は has_one_attached :imageだったけど、画像を複数登録したい場合は has_many_attached :images（複数形s）に変更。他にも変更必要な箇所あり

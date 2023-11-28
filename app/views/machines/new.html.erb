@@ -3,6 +3,7 @@
     <div class="col-md-8 mx-auto post-form-container">
       <h2 class="h2">保有機登録</h2>
       <!-- 投稿を記憶するための model: @machineを追加 -->
+      <!--model: @machineはmachineコントローラで作成する@machine = Machine.newのオブジェクトをはめこんんでいる（と思う）-->
       <%= form_with(url: create_machine_path, model: @machine, local: true, method: :post, html: { class: 'post-form' } ) do |f| %>
       <!-- ここまで -->
       <!-- バリデーションエラーメッセージの追加 -->
@@ -94,6 +95,7 @@
             <%= f.text_field :transportation, class: 'form-control' %>
           </div>
 
+<!--ここで所在地にプロファイル内のpregectureを初期値として入力するためにmachineコントローラに@profile = Profile.find_by(user_id: current_user.id)を書き込む-->
            <div class="form-group">
             <%= f.label "農機具所在地（都道府県）", class: 'form-label' %>
             <%= f.text_field :prefecture,  value: @profile.prefecture, class: 'form-control' %>

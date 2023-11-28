@@ -23,6 +23,7 @@ class MachinesController < ApplicationController
     user = current_user
     @machine = Machine.new(machine_params)
     @machine.user_id = user.id
+    @profile = Profile.find_by(user_id: current_user.id)
 
     if params[:machine][:image]
       @machine.image.attach(params[:machine][:image])
